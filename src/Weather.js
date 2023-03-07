@@ -28,12 +28,14 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
-    // Replace YOUR_API_KEY with your actual API key
-    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=Vinogradovo,Zakarpats'ka oblast,UA&appid=YOUR_API_KEY`;
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=khust,UA&appid=9a7c546a676490e384ce2748d12424af`;
 
     fetch(apiURL)
       .then(response => response.json())
-      .then(data => setWeatherData(data))
+      .then(data => {
+        setWeatherData(data)
+        console.log(data)
+      })
       .catch(error => console.log(error));
   }, []);
 
@@ -42,7 +44,7 @@ function App() {
       {weatherData ? (
         <div>
           <h2>Current Weather in {weatherData.name}</h2>
-          <p>Temperature: {weatherData.main.temp} K</p>
+          <p>Temperature: {(weatherData.main.temp - 273.15)}  K</p>
           <p>Humidity: {weatherData.main.humidity}</p>
           <p>Weather: {weatherData.weather[0].description}</p>
         </div>
