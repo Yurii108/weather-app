@@ -1,0 +1,18 @@
+.card0 {
+    width: 94%;
+
+}
+
+.card1 {
+    background-image: linear-gradient(#2196F3, #81D4FA);
+    padding: 30px 20px 30px 50px;
+    border-radius: 8px 0 0 8px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.card2 {
+    background-color: #607D8B;
+    padding: 0px 0px 40px 40px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
