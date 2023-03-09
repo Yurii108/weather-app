@@ -9,7 +9,6 @@ export const useHttp = () => {
         return await res.json();
     }
 
-
     return { getResource }
 }
 

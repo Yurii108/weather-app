@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
-import { useHttp } from "../../hooks/http.hook";
+import { useWeatherServices } from "../../services/weather-services";
 
 const WeatherInfo = () => {
     const [weatherData, setWeatherData] = useState(null);
 
-    const { getResource } = useHttp();
+    const { getWeatherOfCity } = useWeatherServices();
 
-    const api = 'https://api.openweathermap.org/data/2.5/weather?q=khust,UA&appid=9a7c546a676490e384ce2748d12424af';
 
     useEffect(() => {
 
-        getResource(api)
+        getWeatherOfCity('khust')
             .then(data => {
                 setWeatherData(data)
                 console.log(data)
